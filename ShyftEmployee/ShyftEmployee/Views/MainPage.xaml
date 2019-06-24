@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ShyftEmployee"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="ShyftEmployee.MainPage">
+    <!--<ContentPage.Content>-->
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.08*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="0.08*"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row ="0" 
+                    HorizontalOptions="End" 
+                    VerticalOptions="Center" 
+                    Text="Settings" 
+                    BackgroundColor="Yellow"/>
+            <Label Grid.Row ="1" 
+                   Text="{Binding CompanyName}" 
+                   BackgroundColor="Blue" 
+                   FontSize="Large"
+                   FontAttributes="Bold"/>
+            <Grid Grid.Row="2" BackgroundColor="Green">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" 
+                        Grid.Column="0" 
+                        Text="My Schedule"
+                        Command="{Binding OnScheduleButtonPressed}"/>
+                <Button Grid.Row="0" 
+                        Grid.Column="1" 
+                        Text="My Availability"
+                        Command="{Binding OnAvailabilityButtonPressed}"/>
+                <Button Grid.Row="1" 
+                        Grid.Column="0" 
+                        Text="Messages"
+                        Command="{Binding OnMessagesButtonPressed}"/>
+                <Button Grid.Row="1" 
+                        Grid.Column="1" 
+                        Text="Placeholder"/>
+            </Grid>
+          
+            <Label Grid.Row ="3" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   BackgroundColor="Red" 
+                   Text="V 0.1" 
+                   FontSize="Small"  />
+
+
+        </Grid>
+        <!--<xForms:SfSchedule x:Name="schedule" ScheduleView="WeekView" FirstDayOfWeek="2"/>-->
+    <!--</ContentPage.Content>-->
+</ContentPage>

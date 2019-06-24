@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:popupLayout="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+             x:Class="ShyftEmployee.Views.Popups.ShiftPopup">
+    <ContentPage.Content>
+        <popupLayout:SfPopupLayout IsOpen="{Binding IsOpen}">
+            <popupLayout:SfPopupLayout.PopupView>
+                <popupLayout:PopupView 
+                    HeaderTitle="{Binding RoleName}" 
+                    HeaderHeight="50">
+                    <popupLayout:PopupView.ContentTemplate>
+                        <DataTemplate>
+                            <Grid Padding="20,0,20,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" 
+                                      BackgroundColor="Pink">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height=".4*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0"
+                                               Text="Shift Start"
+                                               BackgroundColor="DarkOliveGreen"/>
+                                        <Label Grid.Column="1"
+                                               Text="Shift End"
+                                               BackgroundColor="Aqua"/>
+                                    </Grid>
+                                    <Grid Grid.Row ="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0"
+                                               FontSize="Large"
+                                               BackgroundColor="Red"
+                                               Text="{Binding StartTime, StringFormat='{0:HH:mm}'}"/>
+                                        <Label Grid.Column="1"
+                                               FontSize="Large"
+                                               BackgroundColor="Orange"
+                                               Text="{Binding EndTime, StringFormat='{0:HH:mm}'}"/>
+                                    </Grid>
+
+
+             
+                                </Grid>
+                                <Grid Grid.Row="1" BackgroundColor="Chartreuse">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="0.4*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" 
+                                           BackgroundColor="Green" 
+                                           Text="Notes:"/>
+                                    <Label Grid.Row="1" 
+                                           BackgroundColor="Blue" 
+                                           Text="{Binding Notes}"/>
+                                </Grid>
+                            </Grid>
+                            <!--<Label Text="This is SfPopupLayout" BackgroundColor="SkyBlue"
+                                   HorizontalTextAlignment="Center"/>-->
+                        </DataTemplate>
+                    </popupLayout:PopupView.ContentTemplate>
+                </popupLayout:PopupView>
+            </popupLayout:SfPopupLayout.PopupView>
+        </popupLayout:SfPopupLayout>
+    </ContentPage.Content>
+</ContentPage>
